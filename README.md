@@ -1,4 +1,4 @@
-# Advent Of Code 2021
+# Advent Of Code 2022
 
 <!-- [![Build and Test](https://github.com/maqiv/AdventOfCode2022/actions/workflows/main.yml/badge.svg)](https://github.com/maqiv/AdventOfCode2022/actions/workflows/main.yml) -->
 
@@ -8,5 +8,4 @@ This time I decided to solve the challenge puzzles in [Rust](https://rust-lang.o
 ## Day 01
 
 * [Task description](https://adventofcode.com/2022/day/1)
-<!-- * [Solution](./AoC2021.FSharp01/)
-* [Tests](./AoC2021.FSharp01.Test/) -->
+* [Solution](./day01/src/)
