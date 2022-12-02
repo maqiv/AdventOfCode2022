@@ -1,4 +1,4 @@
-use std::fs;
+use shared::read_input;
 
 fn main() {
     let greatest_number = quest0();
@@ -47,13 +47,4 @@ fn quest1() -> i32 {
     }
 
     top_three.iter().sum()
-}
-
-fn read_input(file: &str) -> Vec<String> {
-    let lines = fs::read_to_string(file).expect("Should have been able to read the file");
-
-    lines
-        .split_terminator("\n")
-        .map(|s| s.to_string())
-        .collect()
 }

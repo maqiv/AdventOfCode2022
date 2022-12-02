@@ -9,3 +9,8 @@ This time I decided to solve the challenge puzzles in [Rust](https://rust-lang.o
 
 * [Task description](https://adventofcode.com/2022/day/1)
 * [Solution](./day01/src/)
+
+## Day 02
+
+* [Task description](https://adventofcode.com/2022/day/2)
+* [Solution](./day02/src/)
