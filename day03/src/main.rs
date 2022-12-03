@@ -1,8 +1,12 @@
 use shared::read_input;
+use std::slice::Chunks;
 
 fn main() {
     let q0_result = quest0();
     println!("All duplicate items in the rucksacks have an overall sum of {q0_result}");
+
+    let q1_result = quest1();
+    println!("All all elve groups share common items with an overall sum of {q1_result}");
 }
 
 fn quest0() -> i32 {
@@ -20,6 +24,29 @@ fn quest0() -> i32 {
     }
 
     rucksack_dup_items.iter().sum()
+}
+
+fn quest1() -> i32 {
+    let rucksacks = get_rucksacks();
+    let rucksack_groups = rucksacks.chunks(3);
+
+    let common_items = extract_common_items(rucksack_groups);
+
+    common_items.iter().map(|&c| evaluate_priority(c)).sum()
+}
+
+fn extract_common_items(rucksack_groups: Chunks<String>) -> Vec<char> {
+    let mut common_items: Vec<char> = Vec::new();
+
+    for group in rucksack_groups {
+        let item = group[0]
+            .chars()
+            .find(|&s| group[1].contains(s) && group[2].contains(s));
+
+        common_items.push(item.unwrap());
+    }
+
+    common_items
 }
 
 fn split_content(rucksack: String) -> Rucksack {
