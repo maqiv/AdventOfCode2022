@@ -1,8 +1,24 @@
 use shared::read_input;
 
 fn main() {
-    let full_range_pairs_count = quest0();
-    println!("{full_range_pairs_count} ranges in the assignment pairs contain the other");
+    let q0_result = quest0();
+    println!("{q0_result} ranges in the assignment pairs contain the other");
+
+    let q1_result = quest1();
+    println!("{q1_result} ranges in the assignment pairs overlap");
+}
+
+fn quest1() -> i32 {
+    let mut overlapping_pairs = 0;
+
+    for sp in get_section_pairs() {
+        if sp.first.lower <= sp.second.upper && sp.first.upper >= sp.second.lower
+        {
+            overlapping_pairs += 1;
+        }
+    }
+
+    overlapping_pairs
 }
 
 fn quest0() -> i32 {
