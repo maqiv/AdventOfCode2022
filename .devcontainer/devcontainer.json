@@ -1,0 +1,28 @@
+{
+    "name": "Codespaces Rust Starter",
+    "extensions": [
+        "cschleiden.vscode-github-actions",
+        "ms-vsliveshare.vsliveshare",
+        "matklad.rust-analyzer",
+        "serayuzgur.crates",
+        "vadimcn.vscode-lldb"
+    ],
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "editor.formatOnSave": true,
+        "terminal.integrated.defaultProfile.linux": "/usr/bin/zsh",
+        "terminal.integrated.profiles.linux": {
+            "zsh": {
+                "path": "/usr/bin/flatpak-spawn",
+                "args": [
+                    "--host",
+                    "zsh"
+                ]
+            }
+        },
+        "files.exclude": {
+            "**/CODE_OF_CONDUCT.md": true,
+            "**/LICENSE": true
+        }
+    }
+}
