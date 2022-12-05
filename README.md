@@ -20,7 +20,7 @@ This time I decided to solve the challenge puzzles in [Rust](https://rust-lang.o
 * [Task description](https://adventofcode.com/2022/day/3)
 * [Solution](./day03/src/)
 
-## Day 03
+## Day 04
 
 * [Task description](https://adventofcode.com/2022/day/4)
 * [Solution](./day04/src/)
