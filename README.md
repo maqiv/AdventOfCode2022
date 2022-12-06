@@ -24,3 +24,8 @@ This time I decided to solve the challenge puzzles in [Rust](https://rust-lang.o
 
 * [Task description](https://adventofcode.com/2022/day/4)
 * [Solution](./day04/src/)
+
+## Day 05
+
+* [Task description](https://adventofcode.com/2022/day/5)
+* [Solution](./day05/src/)
