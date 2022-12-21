@@ -2,18 +2,40 @@ use regex::Regex;
 use shared::read_input;
 
 fn main() {
-    let lines = read_input("./src/input");
+    quest0();
 
+    quest1();
+}
+
+fn quest1() {
+    let lines = read_input("./src/input");
     let mut warehouse = build_warehouse(&lines);
     let commands = parse_commands(lines);
+    for cmd in commands {
+        let pos = warehouse[cmd.from - 1].len() - cmd.steps;
+        let mut crt_on_the_move = warehouse[cmd.from - 1].split_off(pos);
+        warehouse[cmd.to - 1].append(&mut crt_on_the_move);
+    }
 
+    println!("");
+    print!("The crates on top of each stack are: ");
+    for mut stack in warehouse {
+        let crt = stack.pop().unwrap();
+        print!("{crt}");
+    }
+    println!("\n");
+}
+
+fn quest0() {
+    let lines = read_input("./src/input");
+    let mut warehouse = build_warehouse(&lines);
+    let commands = parse_commands(lines);
     for cmd in commands {
         for _ in 0..cmd.steps {
             let crt_on_the_move = warehouse[cmd.from - 1].pop().unwrap();
             warehouse[cmd.to - 1].push(crt_on_the_move);
         }
     }
-
     println!("");
     print!("The crates on top of each stack are: ");
     for mut stack in warehouse {
